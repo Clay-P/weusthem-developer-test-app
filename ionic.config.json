@@ -1,0 +1,7 @@
+{
+  "name": "weusthem-developer-test-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
