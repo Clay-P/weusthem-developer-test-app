@@ -1,20 +1,41 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar color="success">
     <ion-title>
-      Blank
+      Contacts
     </ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+
+
+
+  <ion-card *ngFor="let contact of contacts">
+  <ion-card-header>{{contact.profilePicture}}</ion-card-header>
+    <ion-item>{{contact.firstName}} {{contact.lastName}}</ion-item>
+    <ion-item>{{contact.email}}</ion-item>
+    <ion-item>{{contact.phone}}</ion-item> 
+    
+    <ion-row>
+      
+      <ion-button color="success">
+        <ion-icon name="color-wand-outline"></ion-icon>
+        Edit Contact Info
+      </ion-button>
+      
+      <ion-button (click)="delete(contact.key)" color="warning">
+        <ion-icon name="trash-outline"></ion-icon>
+        Delete Contact
+      </ion-button>
+    </ion-row>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="first">
+    <ion-fab-button (click)="addNewContact()">
+      <ion-icon name="person-add-outline">
+        Add New Contact
+      </ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>

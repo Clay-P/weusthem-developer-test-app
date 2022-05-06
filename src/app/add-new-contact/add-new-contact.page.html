@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add New Contact</ion-title>
+    <ion-icon name="close" slot="end" size="large" (click)="dismiss()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-item>
+      <ion-label position="floating">First Name</ion-label>
+      <ion-input [{ngModel}]="firstName" type="given-name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input [{ngModel}]="lastName" type="family-name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [{ngModel}]="email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Phone Number</ion-label>
+      <ion-input [{ngModel}]="phone" type="tel"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Profile Picture</ion-label>
+      <ion-input [{ngModel}]="profilePicture" type="photo"></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <ion-button class="ion-margin" expand="block" (click)="addContact()">Save Contact</ion-button>
+
+</ion-content>
